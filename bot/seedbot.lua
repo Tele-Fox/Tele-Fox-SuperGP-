@@ -204,46 +204,56 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "onservice",
-    "inrealm",
-    "ingroup",
-    "inpm",
-    "banhammer",
-    "stats",
-    "anti_spam",
-    "owners",
-    "arabic_lock",
-    "set",
-    "get",
-    "broadcast",
-    "download_media",
-    "invite",
+    "Help_All",
+    "Auto_Leave",
+    "Chat",
+    "Google",
+    "Joke",
+    "Quran",
+    "google_img",
+    "hello",
+    "wlc",
+    "BLOCK",
+    "Feedback",
+    "Member_Manager",
+    "Group_Manager",
+    "S2A",
+    "SUDO",
     "all",
-    "leave_ban"
+    "arabic_lock",
+    "Banhammer",
+    "download_media",
+    "get",
+    "inpm",
+    "invite",
+    "leaders",
+    "leave_ban",
+    "plugins",
+    "realmcommands",
+    "service_entergroup",
+    "set",
+    "anti_spam",
+    "stats",
+    "Version",
+    "close_group",
+    "kickall",
+    "Maseage",
+    "tagall",
     },
-    sudo_users = {110626080,103649648,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {122774063},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
+    about_text = [[SBSS Plus v1
+An advance Administration bot based on yagop/telegram-bot by @Mr_Ah_S 
 
-https://github.com/SEEDTEAM/TeleSeed
+SUDO:
+@Mr_Ah_S {Dev , Founder and Manager}
 
-Admins
-@iwals [Founder]
-@imandaneshi [Developer]
-@Rondoozle [Developer]
-@seyedan25 [Manager]
-
-Special thanks to
-awkward_potato
-Siyanew
-topkecleon
-Vamptacus
+Made bye:
+SBSS Team
 
 Our channels
-@teleseedch [English]
-@iranseed [persian]
+@SBSS_Team
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -320,110 +330,77 @@ This command will send text to [group_id]
 *Only admins and sudo can use res, setowner, commands
 ]],
     help_text = [[
-Commands list :
 
 !kick [username|id]
-You can also do it by reply
-
+حذف فرد از گروه حتی با ریپلای
 !ban [ username|id]
-You can also do it by reply
-
+بن کردن فرد از گروه حتی با ریپلای
 !unban [id]
-You can also do it by reply
-
+آن بن کردن فرد حتی با ریپلای
 !who
-Members list
-
+لیست اعضا
 !modlist
-Moderators list
-
+لیست مدیران
 !promote [username]
-Promote someone
-
+مدیر کردن فرد
 !demote [username]
-Demote someone
-
+عزل مقام فرد
 !kickme
-Will kick user
-
+خروج از گروه
 !about
-Group description
-
+توضیحات گروه
 !setphoto
-Set and locks group photo
-
+تنظیم عکس برای گروه و قفل کردن آن
 !setname [name]
-Set group name
-
+تنظیم نام گروه
 !rules
-Group rules
-
+قوانین گروه
 !id
-return group id or user id
-
+آیدی گروه و آیدی فرد در صورت ریپلای کردن
 !help
-
-!lock [member|name|bots|leave]	
-Locks [member|name|bots|leaveing] 
-
-!unlock [member|name|bots|leave]
-Unlocks [member|name|bots|leaving]
-
-!set rules <text>
-Set <text> as rules
-
-!set about <text>
-Set <text> as about
-
+!lock [member|name|bots]
+قفل اعضا | نام | ربات ها
+!unlock [member|name|photo|bots]
+باز کردن اعضا|نام|عکس|ربات ها
+!set rules <قوانین>
+تنظیم متن به عنوان قوانین
+!set about <قوانین>
+تنظیم توضیحات گروه
 !settings
-Returns group settings
-
+نمایش تنظیمات گروه
 !newlink
-create/revoke your group link
-
+ساخت / تازه سازی لینک گروه
 !link
-returns group link
-
+دریافت لینک گروه
 !owner
-returns group owner id
-
+آیدی صاحب گروه
 !setowner [id]
-Will set id as owner
-
-!setflood [value]
-Set [value] as flood sensitivity
-
+تنظیم فرد به عنوان صاحب گروه
+!setflood [تعداد]
+محدود کردن تعداد اسپم
 !stats
-Simple message statistics
-
-!save [value] <text>
-Save <text> as [value]
-
-!get [value]
-Returns text of [value]
-
+دریافت آمار در قالب متن
+!save [عدد] <text>
+سیو کردن یک متن با یک شماره
+!get [عدد]
+نمایش متن سیو شده بر اساس شماره
 !clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
-
+پاک کردن مدیران | قوانین | توضیحات
 !res [username]
-returns user id
+دریافت آیدی کد فرد برای مثال
 "!res @username"
-
 !log
-will return group logs
-
+دریافت گزارشات گروه
 !banlist
-will return group ban list
+لیست افراد بن شده
+!calc معادل 
+حل معادله ریاضی
+مثال : !calc 1*2
+**شما هم میتوانید از ! استفاده کنید و هم میتوانید از / استفاده کنید 
+**فقط مدیران میتوانند در گروه ربات اد کنند
+**فقط مدیران میتوانند از دستورات kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about,settings استفاده کنند
+**فقط صاحب گروه می تواند از دستورات res,setowner,promote,demote,log استفاده کند
 
-**U can use both "/" and "!" 
-
-
-*Only owner and mods can add bots in group
-
-
-*Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-*Only owner can use res,setowner,promote,demote and log commands
 
 ]]
   }
