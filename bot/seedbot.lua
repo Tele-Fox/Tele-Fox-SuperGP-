@@ -240,7 +240,7 @@ function create_config( )
     "Maseage",
     "tagall",
     },
-    sudo_users = {122774063},--Sudo users
+    sudo_users = {122774063,170774776},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[SBSS Plus v1
@@ -249,7 +249,7 @@ An advance Administration bot based on yagop/telegram-bot by @Mr_Ah_S
 SUDO:
 @Mr_Ah_S {Dev , Founder and Manager}
 
-Made bye:
+Made by:
 SBSS Team
 
 Our channels
